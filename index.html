@@ -1,0 +1,124 @@
+<!doctype html><html lang="en-AU"><head><meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
+<meta name="robots" content="noindex,nofollow,noarchive"><meta name="theme-color" content="#00314F">
+<meta name="apple-mobile-web-app-capable" content="yes"><meta name="mobile-web-app-capable" content="yes"><meta name="apple-mobile-web-app-title" content="Trade Accounts">
+<meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+<link rel="manifest" href="manifest.webmanifest"><link rel="apple-touch-icon" href="icon-180.png"><link rel="icon" href="favicon-32x32.png">
+<title>Trade accounts</title>
+<style>
+:root{--navy:#00314F;--navy9:#002335;--green:#84BD00;--greent:#5B8200;--grns:#EEF6DC;--red:#B3261E;--reds:#FBE6E5;--amb:#A5670A;--ambs:#FBF0DC;--g6:#4E6675;--g2:#DDE4E8;--g1:#EDF1F3;--g05:#F6F8F9}
+*{box-sizing:border-box}body{margin:0;font-family:Inter,"Helvetica Neue",Arial,sans-serif;background:var(--g05);color:#111A20;font-size:17px;-webkit-text-size-adjust:100%}
+header{background:var(--navy);color:#fff;padding:calc(env(safe-area-inset-top) + 14px) 18px 22px;border-bottom:4px solid var(--green)}
+.hw{max-width:900px;margin:auto}
+.top{display:flex;justify-content:space-between;align-items:center}.top img{height:30px}
+.top button{background:none;border:1px solid rgba(255,255,255,.4);color:#fff;border-radius:6px;padding:6px 10px;font:600 12px Inter,Arial;letter-spacing:.08em;cursor:pointer}
+.eyebrow{font:700 12px Inter,Arial;letter-spacing:.14em;text-transform:uppercase;color:var(--green);margin:18px 0 4px}
+h1{font-size:22px;margin:0 0 14px;font-weight:700}
+.kpis{display:grid;grid-template-columns:1fr 1fr;gap:10px}@media(min-width:760px){.kpis{grid-template-columns:repeat(4,1fr)}}
+.kpi{background:rgba(255,255,255,.08);border-radius:10px;padding:12px;border-top:3px solid transparent}
+.kpi .l{font-size:13px;opacity:.85}.kpi .v{font-size:26px;font-weight:800;margin-top:2px}
+.kpi.od{border-color:#FF8A80}.kpi.od .v{color:#FF8A80}.kpi.sn{border-color:#F5C16C}.kpi.sn .v{color:#F5C16C}.kpi.ok{border-color:var(--green)}.kpi.ok .v{color:#C5E57A}
+.upd{font-size:13px;opacity:.75;margin-top:12px}
+main{padding:14px 14px 40px;max-width:900px;margin:auto}
+.pay{background:var(--ambs);border-left:5px solid var(--amb);border-radius:8px;padding:12px 14px;margin:0 0 14px;font-size:15px;line-height:1.4}.pay b{display:block;margin-bottom:3px}
+.bar{display:flex;flex-wrap:wrap;gap:8px;align-items:center;justify-content:space-between;margin:4px 0 14px}
+.chips{display:flex;gap:8px;overflow-x:auto}.chip{border:1.5px solid var(--navy);background:#fff;color:var(--navy);border-radius:999px;padding:9px 14px;font:600 15px Inter,Arial;white-space:nowrap;cursor:pointer}
+.chip.on{background:var(--navy);color:#fff}.chip i{font-style:normal;opacity:.7;margin-left:4px}
+.tg{font-size:14px;color:var(--g6);display:flex;align-items:center;gap:6px}.tg input{width:18px;height:18px}
+.card{background:#fff;border-radius:12px;box-shadow:0 1px 3px rgba(0,35,53,.12);margin-bottom:12px;overflow:hidden;border-left:6px solid var(--green)}
+.card.red{border-left-color:var(--red)}.card.amber{border-left-color:var(--amb)}
+.ch{display:flex;justify-content:space-between;align-items:center;gap:10px;padding:13px 16px;cursor:pointer;flex-wrap:wrap}
+.card.red .ch{background:var(--reds)}.card.amber .ch{background:var(--ambs)}.card.green .ch{background:var(--grns)}
+.ch h2{font-size:18px;margin:0;color:var(--navy)}.ch .s{font-size:13px;color:var(--g6);margin-top:3px}
+.ch .rt{display:flex;align-items:center;gap:14px;margin-left:auto}.ch .m{text-align:right}.ch .m .l{font-size:12px;color:var(--g6)}.ch .m .v{font-size:18px;font-weight:800;color:var(--navy);white-space:nowrap}
+.ch .m .v.r{color:var(--red)}
+.tag{display:inline-block;font:700 11px Inter,Arial;letter-spacing:.06em;text-transform:uppercase;border-radius:4px;padding:4px 8px;white-space:nowrap;color:#fff}
+.tag.red{background:var(--red)}.tag.amber{background:var(--amb)}.tag.green{background:var(--greent)}.tag.grey{background:#7D909B}
+.body{display:none;border-top:1px solid var(--g2)}.card.open .body{display:block}
+.info{padding:10px 16px;font-size:14px;color:var(--g6);line-height:1.4}.info p{margin:6px 0 0;color:#22323C;font-size:15px}
+.inv{padding:11px 16px;border-top:1px solid var(--g1);display:flex;gap:12px;align-items:flex-start}
+.inv.paid{opacity:.6}.inv .bd{flex:1;min-width:0}
+.r1{display:flex;justify-content:space-between;align-items:center;gap:8px}.no{font-weight:700;font-size:16px;word-break:break-all}.amt{font-weight:800;font-size:17px;white-space:nowrap}
+.inv.paid .amt{text-decoration:line-through}
+.job{color:#22323C;margin:3px 0 4px;font-size:14px;line-height:1.35}.meta{font-size:14px;color:var(--g6)}.meta b{color:#22323C;font-weight:600}
+.mp{border:1.5px solid var(--navy);background:#fff;color:var(--navy);border-radius:8px;padding:8px 10px;font:700 12px Inter,Arial;letter-spacing:.04em;min-width:88px;cursor:pointer}
+.mp.on{background:var(--greent);border-color:var(--greent);color:#fff}.proof{font:700 12px Inter,Arial;color:var(--greent);min-width:88px;padding-top:8px;text-align:center}
+.ch .arr{font-size:14px;color:var(--g6)}
+h3{font-size:13px;letter-spacing:.14em;text-transform:uppercase;color:var(--greent);margin:26px 4px 10px}
+.flag{background:#fff;border-left:5px solid var(--amb);border-radius:8px;padding:11px 14px;margin-bottom:8px;box-shadow:0 1px 2px rgba(0,35,53,.1);font-size:15px;line-height:1.4}
+.flag.red{border-color:var(--red);background:var(--reds)}
+.foot{font-size:13px;color:var(--g6);text-align:center;margin-top:24px;line-height:1.5}.foot button{background:none;border:0;color:var(--g6);text-decoration:underline;font-size:13px;cursor:pointer}
+#lock{position:fixed;inset:0;background:var(--navy);color:#fff;display:flex;flex-direction:column;align-items:center;justify-content:center;padding:30px;text-align:center}
+#lock img{height:44px;margin-bottom:30px}#lock input{font-size:20px;padding:14px;border-radius:8px;border:0;width:100%;max-width:320px;text-align:center}
+#lock button{margin-top:14px;background:var(--green);color:var(--navy9);border:0;border-radius:8px;padding:14px 30px;font:700 15px Inter,Arial;letter-spacing:.1em;width:100%;max-width:320px;cursor:pointer}
+#err{color:#FF8A80;min-height:22px;margin-top:10px}#app{display:none}
+</style></head><body>
+<div id="lock"><img src="bsg-logo-reversed.svg" alt="Buildsmart Group"><div style="font-size:20px;font-weight:700;margin-bottom:6px">Trade accounts</div>
+<div style="opacity:.8;margin-bottom:22px">Enter your passcode to open</div>
+<form id="f"><input id="pw" type="password" autocomplete="current-password" placeholder="Passcode"><br><button>OPEN</button></form><div id="err"></div></div>
+<div id="app"><header><div class="hw"><div class="top"><img src="bsg-logo-reversed.svg" alt="Buildsmart Group"><button id="lk">LOCK</button></div>
+<div class="eyebrow">Trade credit accounts</div><h1>What you owe suppliers</h1>
+<div class="kpis"><div class="kpi"><div class="l">Total owing</div><div class="v" id="k1"></div></div>
+<div class="kpi od"><div class="l" id="k2l">Overdue</div><div class="v" id="k2"></div></div>
+<div class="kpi sn"><div class="l" id="k3l">Due in 14 days</div><div class="v" id="k3"></div></div>
+<div class="kpi ok"><div class="l" id="k4l">Accounts</div><div class="v" id="k4"></div></div></div>
+<div class="upd" id="upd"></div></div></header>
+<main><div class="pay" id="pay"></div>
+<div class="bar"><div class="chips" id="chips"></div><label class="tg"><input type="checkbox" id="hp"> Hide paid invoices</label></div>
+<div id="cards"></div><h3>Gaps to fix</h3><div id="gaps"></div>
+<div class="foot">Tap an account to see its invoices. Red is overdue, amber is due within 14 days, green is paid up or not due yet.<br>
+"Mark paid" ticks are saved on this device only. Tell Grok Bot what you paid so the next refresh shows it for good.<br><button id="clr">Clear my ticks</button></div></main></div>
+<script>
+const V='08b00e9724',PK='bsgtradepw',TK='bsgtrade-paid';const $=s=>document.querySelector(s);
+const fmt=n=>'$'+n.toLocaleString('en-AU',{minimumFractionDigits:2,maximumFractionDigits:2});
+const D=s=>s?new Date(s+'T00:00').toLocaleDateString('en-AU',{day:'numeric',month:'short'}):'Not stated';
+const esc=s=>String(s??'').replace(/[&<>"]/g,c=>({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;'}[c]));
+const iso=d=>new Date(d.getTime()-d.getTimezoneOffset()*6e4).toISOString().slice(0,10);
+const ub=b=>Uint8Array.from(atob(b),c=>c.charCodeAt(0));let DATA,F='all',OPEN={};
+let TICK={};try{TICK=JSON.parse(localStorage.getItem(TK)||'{}')}catch(e){TICK={}}
+const saveT=()=>localStorage.setItem(TK,JSON.stringify(TICK));
+async function unlock(pw){const e=await (await fetch('data.enc.json?v='+Date.now(),{cache:'no-store'})).json();
+ const k0=await crypto.subtle.importKey('raw',new TextEncoder().encode(pw),'PBKDF2',false,['deriveKey']);
+ const k=await crypto.subtle.deriveKey({name:'PBKDF2',salt:ub(e.salt),iterations:e.iter,hash:'SHA-256'},k0,{name:'AES-GCM',length:256},false,['decrypt']);
+ return JSON.parse(new TextDecoder().decode(await crypto.subtle.decrypt({name:'AES-GCM',iv:ub(e.iv)},k,ub(e.ct))))}
+const T=iso(new Date()),S=iso(new Date(Date.now()+14*864e5));
+const key=(a,i)=>a.id+'|'+i.n;
+function st(a,i){if(i.p||TICK[key(a,i)])return'paid';if(i.u<T)return'overdue';if(i.u<=S)return'soon';return'later'}
+function sum(a){let o=0,od=0,so=0;a.inv.forEach(i=>{const s=st(a,i);if(s==='paid')return;o+=i.a;if(s==='overdue')od+=i.a;if(s==='soon')so+=i.a});
+ return{o,od,so,lv:od>.004?'red':so>.004?'amber':'green'}}
+const LBL={red:'Overdue',amber:'Due in 14 days',green:'Paid up / on track'};
+function render(){const A=DATA.accounts,hp=$('#hp').checked;const X=A.map(a=>({a,s:sum(a)}));
+ const tot=X.reduce((t,x)=>t+x.s.o,0),od=X.reduce((t,x)=>t+x.s.od,0),so=X.reduce((t,x)=>t+x.s.so,0);
+ const n=l=>X.filter(x=>x.s.lv===l).length,ticks=Object.keys(TICK).length;
+ $('#k1').textContent=fmt(tot);$('#k2').textContent=fmt(od);$('#k2l').textContent=`Overdue · ${n('red')} accounts`;
+ $('#k3').textContent=fmt(so);$('#k3l').textContent=`Due by ${D(S)} · ${n('amber')} more`;
+ $('#k4').textContent=A.length;$('#k4l').textContent=`Accounts · ${n('green')} paid up${ticks?` · ${ticks} ticked`:''}`;
+ const u=new Date(DATA.updated);$('#upd').textContent=`Statements and Xero checked ${u.toLocaleDateString('en-AU',{weekday:'short',day:'numeric',month:'short',year:'numeric'})}, ${u.toLocaleTimeString('en-AU',{hour:'numeric',minute:'2-digit'})}`;
+ $('#pay').innerHTML=`<b>Pay first</b>${esc(DATA.payFirst)}`;
+ $('#chips').innerHTML=[['all','All',A.length],['red','Overdue',n('red')],['amber','Due soon',n('amber')],['green','Paid up',n('green')]]
+  .map(([f,l,c])=>`<button class="chip${F===f?' on':''}" data-f="${f}">${l}<i>${c}</i></button>`).join('');
+ const ord={red:0,amber:1,green:2};
+ const show=X.filter(x=>F==='all'||x.s.lv===F).sort((p,q)=>ord[p.s.lv]-ord[q.s.lv]||q.s.od-p.s.od||q.s.o-p.s.o);
+ $('#cards').innerHTML=show.map(({a,s})=>{const rows=a.inv.filter(i=>!(hp&&st(a,i)==='paid'));
+  return `<div class="card ${s.lv}${OPEN[a.id]?' open':''}" data-id="${a.id}"><div class="ch"><div><h2><span class="arr">${OPEN[a.id]?'▾':'▸'}</span> ${esc(a.name)}</h2><div class="s">Acct ${esc(a.acct)} · ${esc(a.stmt)}</div></div>
+  <div class="rt"><div class="m"><div class="l">Owing</div><div class="v">${fmt(s.o)}</div></div><div class="m"><div class="l">Overdue</div><div class="v${s.od>0?' r':''}">${fmt(s.od)}</div></div><span class="tag ${s.lv}">${LBL[s.lv]}</span></div></div>
+  <div class="body"><div class="info">${esc(a.terms)} · ${esc(a.contact)}${a.note?`<p>${esc(a.note)}</p>`:''}</div>`+
+  rows.map(i=>{const k=key(a,i),t=st(a,i),tk=!!TICK[k];const tg=t==='overdue'?['red','Overdue']:t==='soon'?['amber','Due soon']:t==='paid'?['green',i.p?'Paid':'Ticked paid']:['grey','Not due'];
+   return `<div class="inv${t==='paid'?' paid':''}">${i.p?'<div class="proof">PROOF</div>':`<button class="mp${tk?' on':''}" data-k="${esc(k)}">${tk?'✓ PAID':'MARK PAID'}</button>`}
+   <div class="bd"><div class="r1"><div class="no">#${esc(i.n)}</div><div class="amt">${fmt(i.a)}</div></div>${(i.p||i.x)?`<div class="job">${esc(i.p||i.x)}</div>`:''}
+   <div class="meta">Dated <b>${D(i.d)}</b> · Due <b>${D(i.u)}</b> <span class="tag ${tg[0]}">${tg[1]}</span></div></div></div>`}).join('')+
+  (a.inv.length?'':'<div class="info">No open invoices on this account.</div>')+'</div></div>'}).join('')||'<p>No accounts in this group.</p>';
+ $('#gaps').innerHTML=DATA.gaps.map((g,ix)=>`<div class="flag${ix===0?' red':''}">${esc(g)}</div>`).join('')}
+document.addEventListener('click',e=>{const m=e.target.closest('.mp');if(m){const k=m.dataset.k;if(TICK[k])delete TICK[k];else TICK[k]=new Date().toISOString();saveT();render();return}
+ const c=e.target.closest('.chip');if(c){F=c.dataset.f;render();return}
+ const h=e.target.closest('.ch');if(h){const id=h.parentElement.dataset.id;OPEN[id]=!OPEN[id];render()}});
+$('#hp').onchange=render;
+$('#clr').onclick=()=>{if(confirm('Clear all your Mark paid ticks on this device?')){TICK={};saveT();render()}};
+async function go(pw,quiet){try{DATA=await unlock(pw);localStorage.setItem(PK,pw);$('#lock').style.display='none';$('#app').style.display='block';render();return true}
+ catch(e){if(!quiet){localStorage.removeItem(PK);$('#err').textContent=navigator.onLine?'That passcode didn\'t work.':'You\'re offline – try again when connected.'}return false}}
+$('#f').onsubmit=e=>{e.preventDefault();go($('#pw').value.trim())};
+$('#lk').onclick=()=>{localStorage.removeItem(PK);location.reload()};
+(async()=>{const s=localStorage.getItem(PK);if(s&&await go(s,true))return;const o=localStorage.getItem('bsgohpw');if(o)go(o,true)})();
+document.addEventListener('visibilitychange',()=>{const p=localStorage.getItem(PK);if(!document.hidden&&p&&DATA)go(p,true)});
+if('serviceWorker' in navigator)navigator.serviceWorker.register('sw.js');
+</script></body></html>
